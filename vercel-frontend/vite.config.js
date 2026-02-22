@@ -7,8 +7,9 @@ export default defineConfig({
     outDir: 'dist',
   },
   server: {
-    // Proxy API calls to backend in dev mode
-    // Change target to your Render/Railway URL for remote backend
+    host: '0.0.0.0',
+    port: 5000,
+    allowedHosts: true,
     proxy: {
       '/api': {
         target: process.env.VITE_API_URL || 'http://localhost:8000',
