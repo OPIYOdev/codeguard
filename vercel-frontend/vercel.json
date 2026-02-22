@@ -9,29 +9,8 @@
     }
   ],
   "routes": [
-    {
-      "src": "/assets/(.*)",
-      "status": 200
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
-    }
-  ],
-  "headers": [
-    {
-      "source": "/assets/(.*\\.(js|css|woff2?|ttf|png|jpg|jpeg|gif|svg|ico))",
-      "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=31536000, immutable" },
-        { "key": "Content-Type", "value": "application/javascript" }
-      ]
-    },
-    {
-      "source": "/assets/(.*\\.(css))",
-      "headers": [
-        { "key": "Content-Type", "value": "text/css" }
-      ]
-    }
+    { "src": "/assets/(.*)", "headers": { "Content-Type": "application/javascript" } },
+    { "src": "/(.*)", "dest": "/index.html" }
   ],
   "env": {
     "VITE_API_URL": "https://your-backend.onrender.com"
